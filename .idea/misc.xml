@@ -7,7 +7,7 @@
         <entry key="..\:/MyProjectNotesapp/app/src/main/res/drawable/indicator_inactive.xml" value="0.10400000000000001" />
         <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/activity_first_splash_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
-        <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/activity_main_intro.xml" value="0.2" />
         <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/content_main_intro.xml" value="0.25416666666666665" />
         <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/fragment_blank.xml" value="0.25416666666666665" />
@@ -16,7 +16,8 @@
         <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/fragment_first_splash_screen.xml" value="0.1437125748502994" />
         <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/fragment_home.xml" value="0.4" />
         <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/fragment_initial_page.xml" value="0.25416666666666665" />
-        <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/fragment_login.xml" value="0.264" />
+        <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/fragment_intro.xml" value="0.1" />
+        <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/fragment_login.xml" value="0.2" />
         <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/fragment_register.xml" value="0.264" />
         <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/fragment_register_or_login_page.xml" value="0.264" />
         <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/fragment_second.xml" value="0.25416666666666665" />
@@ -26,7 +27,7 @@
         <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/fragment_splash_screen3.xml" value="0.25416666666666665" />
         <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/fragment_splashe_screen0.xml" value="0.10583941605839416" />
         <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/fragment_view_pager.xml" value="0.1" />
-        <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/slider_item_container.xml" value="0.2" />
+        <entry key="..\:/MyProjectNotesapp/app/src/main/res/layout/slider_item_container.xml" value="0.264" />
       </map>
     </option>
   </component>

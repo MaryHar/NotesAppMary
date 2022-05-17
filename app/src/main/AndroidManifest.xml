@@ -11,13 +11,8 @@
         android:theme="@style/Theme.MyProjectNotesApp">
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.myprojectnotesapp.ui.SplashAndIntroScreen.Intro.HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.SplashAndIntroScreen.SplashScreen.FirstSplashScreenActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

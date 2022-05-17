@@ -1,7 +1,7 @@
 package com.example.myprojectnotesapp.ui.SplashAndIntroScreen.Intro
 
 data class IntroSlide(
-    val title: String,
+    val icon: Int,
     val description: String,
-    val icon: Int
+    val title: String
 )
