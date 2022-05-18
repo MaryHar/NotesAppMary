@@ -12,8 +12,8 @@
         android:id="@+id/imageView"
         android:layout_width="280dp"
         android:layout_height="280dp"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/login"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/loginn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -58,7 +58,7 @@
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginLeft="40sp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="40sp"
@@ -74,7 +74,7 @@
     <EditText
         android:id="@+id/editTextPhone"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginLeft="40sp"
         android:layout_marginRight="40sp"
         android:background="@color/white"

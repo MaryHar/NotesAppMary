@@ -11,10 +11,11 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="280dp"
-        android:layout_height="270dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="35dp"
         android:src="@drawable/register"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,7 +46,7 @@
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginLeft="40sp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="40sp"
@@ -60,7 +61,7 @@
     <EditText
         android:id="@+id/editTextPhone"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginLeft="40sp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="40sp"
@@ -76,7 +77,7 @@
     <EditText
         android:id="@+id/editTextPhone2"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginLeft="40sp"
         android:layout_marginRight="40sp"
         android:background="@color/white"
