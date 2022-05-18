@@ -1,11 +1,16 @@
 package com.example.myprojectnotesapp.ui.SplashAndIntroScreen.Intro
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
 import com.example.myprojectnotesapp.R
 import com.example.myprojectnotesapp.databinding.FragmentIntroBinding
@@ -19,10 +24,16 @@ class IntroFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentIntroBinding.inflate(layoutInflater)
+
         return binding.root
     }
 
-
+    private fun onIntroFinished(){
+        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putBoolean("Finished",true)
+        editor.apply()
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Log.e("TAG", "onViewCreated: " )
         val viewpager=  binding.introSliderViewPager.adapter
@@ -48,6 +59,10 @@ class IntroFragment : Fragment() {
 
         })
 
+        view.findViewById<Button>(R.id.buttonNext).setOnClickListener {
+            findNavController().navigate(R.id.action_introFragment_to_loginFragment)
+            onIntroFinished()
+        }
     }
     private fun getIntroData(): MutableList<IntroSlide> {
         val introList :MutableList<IntroSlide> = ArrayList()
