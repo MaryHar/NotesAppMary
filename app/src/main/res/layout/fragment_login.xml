@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pinkPrimaryBack"
-    tools:context=".ui.SplashAndIntroScreen.RegisterOrLogin.LoginFragment">
+    tools:context=".ui.login.RegisterOrLogin.LoginFragment">
 
 
     <ImageView
@@ -22,11 +22,9 @@
         android:id="@+id/buttonLogin"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="28dp"
         android:backgroundTint="@color/pinkSecondaryDark"
-        android:text="Login"
+        android:text="@string/login"
         app:layout_constraintEnd_toStartOf="@+id/buttonRegister"
         app:layout_constraintHorizontal_bias="0.554"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,11 +34,9 @@
         android:id="@+id/buttonRegister"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="28dp"
         android:backgroundTint="@color/pinkSecondaryDark"
-        android:text="Register"
+        android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.846"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,7 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:text="Forgot password?"
-        android:textSize="16dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 

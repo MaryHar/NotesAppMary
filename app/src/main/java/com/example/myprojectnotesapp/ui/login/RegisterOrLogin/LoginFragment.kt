@@ -1,4 +1,4 @@
-package com.example.myprojectnotesapp.ui.SplashAndIntroScreen.RegisterOrLogin
+package com.example.myprojectnotesapp.ui.login.RegisterOrLogin
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.myprojectnotesapp.R
 

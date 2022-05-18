@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.example.myprojectnotesapp.ui.SplashAndIntroScreen.SplashScreen.SplashScreenFragment"
+        android:name="com.example.myprojectnotesapp.ui.login.SplashScreen.SplashScreenFragment"
         android:label="SplashScreenFragment" >
         <action
             android:id="@+id/action_splashScreenFragment_to_introFragment"
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/introFragment"
-        android:name="com.example.myprojectnotesapp.ui.SplashAndIntroScreen.Intro.IntroFragment"
+        android:name="com.example.myprojectnotesapp.ui.login.Intro.IntroFragment"
         android:label="IntroFragment" >
         <action
             android:id="@+id/action_introFragment_to_loginFragment"
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.myprojectnotesapp.ui.SplashAndIntroScreen.RegisterOrLogin.LoginFragment"
+        android:name="com.example.myprojectnotesapp.ui.login.RegisterOrLogin.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.myprojectnotesapp.ui.SplashAndIntroScreen.RegisterOrLogin.RegisterFragment"
+        android:name="com.example.myprojectnotesapp.ui.login.RegisterOrLogin.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -44,7 +44,7 @@
     </fragment>
     <fragment
         android:id="@+id/logOutFragment"
-        android:name="com.example.myprojectnotesapp.ui.SplashAndIntroScreen.RegisterOrLogin.LogOutFragment"
+        android:name="com.example.myprojectnotesapp.ui.login.RegisterOrLogin.LogOutFragment"
         android:label="fragment_log_out"
         tools:layout="@layout/fragment_log_out" >
         <action

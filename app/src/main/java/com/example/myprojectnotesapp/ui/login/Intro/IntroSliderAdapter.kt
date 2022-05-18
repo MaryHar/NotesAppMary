@@ -1,16 +1,16 @@
-package com.example.myprojectnotesapp.ui.SplashAndIntroScreen.Intro
+package com.example.myprojectnotesapp.ui.login.Intro
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
 import com.example.myprojectnotesapp.R
 
 class IntroSliderAdapter(private val introSlides: List<IntroSlide>):PagerAdapter(){
+
     override fun instantiateItem(collection: ViewGroup, position: Int): Any {
         val intro = introSlides[position]
         val inflater = LayoutInflater.from(collection.context)

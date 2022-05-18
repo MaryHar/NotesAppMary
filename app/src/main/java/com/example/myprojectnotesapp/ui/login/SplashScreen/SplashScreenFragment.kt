@@ -1,16 +1,11 @@
-package com.example.myprojectnotesapp.ui.SplashAndIntroScreen.SplashScreen
+package com.example.myprojectnotesapp.ui.login.SplashScreen
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import com.example.myprojectnotesapp.MainActivity
 import com.example.myprojectnotesapp.R
-import kotlinx.coroutines.*
 
 class SplashScreenFragment : Fragment() {
 

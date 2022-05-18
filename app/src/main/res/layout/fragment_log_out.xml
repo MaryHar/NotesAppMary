@@ -6,7 +6,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
 android:gravity="center"
-    tools:context=".ui.SplashAndIntroScreen.RegisterOrLogin.LogOutFragment">
+    tools:context=".ui.login.RegisterOrLogin.LogOutFragment">
 
 <TextView
     android:id="@+id/textView"
