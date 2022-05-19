@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.myprojectnotesapp.R
 
 class IntroSliderAdapter(private val introSlides: List<IntroSlide>):PagerAdapter(){
+
     override fun instantiateItem(collection: ViewGroup, position: Int): Any {
         val intro = introSlides[position]
         val inflater = LayoutInflater.from(collection.context)
