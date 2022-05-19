@@ -129,7 +129,7 @@
                     android:textColor="@color/colorTextBlack"
                     android:textSize="16dp" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonLogin"
                     android:layout_width="0dp"
                     android:layout_height="52dp"
