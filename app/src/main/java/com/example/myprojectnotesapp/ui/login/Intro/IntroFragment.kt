@@ -64,9 +64,9 @@ class IntroFragment : Fragment() {
     }
     private fun getIntroData(): MutableList<IntroSlide> {
         val introList :MutableList<IntroSlide> = ArrayList()
-        introList.add(IntroSlide(R.drawable.splash_screen,getString(R.string.next),getString(R.string.back)))
-        introList.add(IntroSlide(R.drawable.splash_screen2,getString(R.string.next),getString(R.string.back)))
-        introList.add(IntroSlide(R.drawable.login_or_register,getString(R.string.next),getString(R.string.back),))
+        introList.add(IntroSlide(R.drawable.splash_screen,getString(R.string.body),getString(R.string.back)))
+        introList.add(IntroSlide(R.drawable.splash_screen2,getString(R.string.body),getString(R.string.back)))
+        introList.add(IntroSlide(R.drawable.login_or_register,getString(R.string.body),getString(R.string.back),))
         return introList
     }
 

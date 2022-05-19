@@ -32,7 +32,6 @@ class ForgetPasswordFragment: Fragment(R.layout.fragment_forget_password) {
         resetListener()
 
         signInPageButton.setOnClickListener(){
-            val controller = view?.let { it1 -> Navigation.findNavController(it1) }
             findNavController().navigate(R.id.action_forgetPasswordFragment_to_loginFragment)
         }
 
