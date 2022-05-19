@@ -1,4 +1,4 @@
-package com.example.myprojectnotesapp.ui.SplashAndIntroScreen.Intro
+package com.example.myprojectnotesapp.ui.login.Intro
 
 import android.content.Context
 import android.os.Bundle
@@ -8,8 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
 import com.example.myprojectnotesapp.R
