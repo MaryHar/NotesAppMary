@@ -57,16 +57,13 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                     editTextUrl.hint = userInfo.url
                 }
 
-
-                Glide.with(requireActivity()).load(userInfo.url).placeholder(R.drawable.profile_picture).into(imageViewPicture)
-
+                Glide.with(requireActivity()).load(userInfo.url).
+                placeholder(R.drawable.profile_picture).into(imageViewPicture)
             }
 
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(activity, "DBerror", Toast.LENGTH_SHORT).show()
-
             }
-
         })
     }
 
@@ -79,14 +76,12 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         editTextName = requireView().findViewById(R.id.editTextName)
         editTextUrl = requireView().findViewById(R.id.editTextUrl)
         editTextBio = requireView().findViewById(R.id.editTextBio)
-
     }
 
     private fun changePasswordListener() {
         textViewChangePassword.setOnClickListener(){
             findNavController().navigate(R.id.action_profileFragment_to_changePasswordFragment2)
         }
-
     }
     private fun saveButtonListeners() {
         buttonSave.setOnClickListener {

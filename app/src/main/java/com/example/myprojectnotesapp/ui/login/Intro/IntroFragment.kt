@@ -69,5 +69,4 @@ class IntroFragment : Fragment() {
         introList.add(IntroSlide(R.drawable.login_or_register,getString(R.string.body),getString(R.string.register),))
         return introList
     }
-
 }

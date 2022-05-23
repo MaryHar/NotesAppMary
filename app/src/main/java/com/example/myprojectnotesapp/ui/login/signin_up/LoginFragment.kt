@@ -9,9 +9,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import com.example.myprojectnotesapp.MainActivity
 import com.example.myprojectnotesapp.R
 import com.example.myprojectnotesapp.home.HomeActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -101,7 +99,6 @@ class LoginFragment : Fragment(R.layout.fragment_login){
                     Toast.makeText(activity, "Error", Toast.LENGTH_SHORT).show()
                 }
                 }
-
         }
 
     }
