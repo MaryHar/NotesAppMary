@@ -56,8 +56,6 @@ class ForgetPasswordFragment: Fragment(R.layout.fragment_forget_password) {
             FirebaseAuth.getInstance().sendPasswordResetEmail(email)
                 .addOnCompleteListener { task -> if(task.isSuccessful){
                     Toast.makeText(getActivity(), "Check E-mail for new password", Toast.LENGTH_SHORT).show()
-
-                    val controller = view?.let { it1 -> Navigation.findNavController(it1) }
                     findNavController().navigate(R.id.action_forgetPasswordFragment_to_loginFragment)
 
                 }else {

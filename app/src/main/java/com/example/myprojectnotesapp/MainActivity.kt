@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         handle.postDelayed({
             navigation.findNavController().navigate(R.id.introFragment)
         },3000)
-
     }
 
 }

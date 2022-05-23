@@ -13,6 +13,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.myprojectnotesapp.MainActivity
 import com.example.myprojectnotesapp.R
+import com.example.myprojectnotesapp.home.HomeActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class RegisterFragment: Fragment(R.layout.fragment_register) {
@@ -28,8 +29,6 @@ class RegisterFragment: Fragment(R.layout.fragment_register) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val controller = Navigation.findNavController(view)
-
 
         init()
         registerListeners()
@@ -90,7 +89,8 @@ class RegisterFragment: Fragment(R.layout.fragment_register) {
                 .addOnCompleteListener{ task-> if(task.isSuccessful) {
                     Toast. makeText(getActivity(),"You signed up succesfully!",Toast. LENGTH_SHORT)
                         . show();
-                    startActivity(Intent(activity, MainActivity::class.java))
+                    // findNavController().navigate(R.id.action_registerFragment_to_homeFragment2)
+                    startActivity(Intent(activity, HomeActivity::class.java))
                     getActivity()?.finish()
                 }
                 else Toast.makeText(getActivity(), "Error!", Toast.LENGTH_SHORT).show()}

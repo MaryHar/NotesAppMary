@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/seg_ui_semibold"
-                android:text="Join Chik-Chika now today."
+                android:text="Join Notes app now today."
                 android:paddingStart="7dp"
                 android:textColor="@color/colorTextWhite"
                 android:textSize="18dp" />
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:fontFamily="@font/seg_ui_semibold"
-            android:text="SIGN UP"
+            android:text="Sign up"
             android:textColor="@color/colorTextBlack"
             android:textSize="26dp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout2"

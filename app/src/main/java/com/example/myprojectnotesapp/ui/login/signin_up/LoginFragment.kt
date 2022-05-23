@@ -13,6 +13,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.myprojectnotesapp.MainActivity
 import com.example.myprojectnotesapp.R
+import com.example.myprojectnotesapp.home.HomeActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginFragment : Fragment(R.layout.fragment_login){
@@ -28,13 +29,10 @@ class LoginFragment : Fragment(R.layout.fragment_login){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val controller = Navigation.findNavController(view)
-
-        if (FirebaseAuth.getInstance().currentUser !=null){
-            startActivity(Intent(activity, MainActivity::class.java))
-            getActivity()?.finish()
-        }
-
+//        if (FirebaseAuth.getInstance().currentUser !=null){
+//            startActivity(Intent(activity, HomeActivity::class.java))
+//            getActivity()?.finish()
+//        }
 
         init()
         loginListeners()
@@ -55,7 +53,6 @@ class LoginFragment : Fragment(R.layout.fragment_login){
         buttonLogin = requireView().findViewById(R.id.buttonLogin)
         buttonReset = requireView().findViewById(R.id.buttonReset)
         buttonRegister = requireView().findViewById(R.id.buttonRegister)
-
 
     }
 
@@ -96,10 +93,9 @@ class LoginFragment : Fragment(R.layout.fragment_login){
             FirebaseAuth.getInstance()
                 .signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener { task -> if(task.isSuccessful){
-
-                    startActivity(Intent(activity, MainActivity::class.java))
+           // findNavController().navigate(R.id.action_registerFragment_to_homeFragment2)
+                    startActivity(Intent(activity, HomeActivity::class.java))
                     getActivity()?.finish()
-
 
                 }else {
                     Toast.makeText(activity, "Error", Toast.LENGTH_SHORT).show()

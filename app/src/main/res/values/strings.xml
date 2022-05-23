@@ -16,5 +16,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <string name="notes">Your Notes</string>
 
 </resources>
