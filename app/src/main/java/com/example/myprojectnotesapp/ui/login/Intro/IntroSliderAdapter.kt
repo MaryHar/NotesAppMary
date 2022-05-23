@@ -9,16 +9,17 @@ import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
 import com.example.myprojectnotesapp.R
 
-class IntroSliderAdapter(private val introSlides: List<IntroSlide>):PagerAdapter(){
+class IntroSliderAdapter(private val introSlides: List<IntroSlide>) : PagerAdapter() {
 
     override fun instantiateItem(collection: ViewGroup, position: Int): Any {
         val intro = introSlides[position]
         val inflater = LayoutInflater.from(collection.context)
-        val layout = inflater.inflate(R.layout.slider_item_container, collection, false) as ViewGroup
+        val layout =
+            inflater.inflate(R.layout.slider_item_container, collection, false) as ViewGroup
         collection.addView(layout)
         val screenImage = layout.findViewById<ImageView>(R.id.imageSlideIcon)
         val screenText = layout.findViewById<TextView>(R.id.textTitle)
-        val descText=layout.findViewById<TextView>(R.id.textDescription)
+        val descText = layout.findViewById<TextView>(R.id.textDescription)
 
 
         Glide.with(collection.context).load(intro.icon).into(screenImage)

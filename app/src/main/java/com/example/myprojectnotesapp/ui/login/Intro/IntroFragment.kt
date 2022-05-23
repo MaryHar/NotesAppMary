@@ -26,24 +26,27 @@ class IntroFragment : Fragment() {
         return binding.root
     }
 
-    private fun onIntroFinished(){
+    private fun onIntroFinished() {
         val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
-        editor.putBoolean("Finished",true)
+        editor.putBoolean("Finished", true)
         editor.apply()
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        Log.e("TAG", "onViewCreated: " )
-        val viewpager=  binding.introSliderViewPager.adapter
+        Log.e("TAG", "onViewCreated: ")
+        val viewpager = binding.introSliderViewPager.adapter
         binding.introSliderViewPager.adapter = IntroSliderAdapter(getIntroData())
 
 
         val springDotsIndicator = binding.springDotsIndicator
         springDotsIndicator.attachTo(binding.introSliderViewPager)
-        binding.introSliderViewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        binding.introSliderViewPager.addOnPageChangeListener(object :
+            ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {
 
             }
+
             override fun onPageScrolled(
                 position: Int,
                 positionOffset: Float,
@@ -51,6 +54,7 @@ class IntroFragment : Fragment() {
             ) {
 
             }
+
             override fun onPageSelected(position: Int) {
 
             }
@@ -62,11 +66,30 @@ class IntroFragment : Fragment() {
             onIntroFinished()
         }
     }
+
     private fun getIntroData(): MutableList<IntroSlide> {
-        val introList :MutableList<IntroSlide> = ArrayList()
-        introList.add(IntroSlide(R.drawable.splash_screen,getString(R.string.body),getString(R.string.notes)))
-        introList.add(IntroSlide(R.drawable.splash_screen2,getString(R.string.body),getString(R.string.notes)))
-        introList.add(IntroSlide(R.drawable.login_or_register,getString(R.string.body),getString(R.string.register),))
+        val introList: MutableList<IntroSlide> = ArrayList()
+        introList.add(
+            IntroSlide(
+                R.drawable.splash_screen,
+                getString(R.string.body),
+                getString(R.string.notes)
+            )
+        )
+        introList.add(
+            IntroSlide(
+                R.drawable.splash_screen2,
+                getString(R.string.body),
+                getString(R.string.notes)
+            )
+        )
+        introList.add(
+            IntroSlide(
+                R.drawable.login_or_register,
+                getString(R.string.body),
+                getString(R.string.register),
+            )
+        )
         return introList
     }
 }

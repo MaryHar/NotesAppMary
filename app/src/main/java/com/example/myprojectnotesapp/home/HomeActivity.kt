@@ -9,7 +9,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.myprojectnotesapp.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class HomeActivity : AppCompatActivity(){
+class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -29,7 +29,7 @@ class HomeActivity : AppCompatActivity(){
                 R.id.create_notes
             )
         )
-       //setupActionBarWithNavController(controller, appBarConfig)
+        //setupActionBarWithNavController(controller, appBarConfig)
         navView.setupWithNavController(controller)
 
     }

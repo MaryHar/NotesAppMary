@@ -14,13 +14,13 @@ import com.example.myprojectnotesapp.R
 import com.example.myprojectnotesapp.home.HomeActivity
 import com.google.firebase.auth.FirebaseAuth
 
-class LoginFragment : Fragment(R.layout.fragment_login){
+class LoginFragment : Fragment(R.layout.fragment_login) {
 
-    private lateinit var editTextMail : EditText
-    private lateinit var editTextPassword : EditText
-    private lateinit var buttonLogin : Button
-    private lateinit var buttonReset : TextView
-    private lateinit var buttonRegister : TextView
+    private lateinit var editTextMail: EditText
+    private lateinit var editTextPassword: EditText
+    private lateinit var buttonLogin: Button
+    private lateinit var buttonReset: TextView
+    private lateinit var buttonRegister: TextView
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
     private val emailPattern2 = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+\\.+[a-z]+"
 
@@ -36,16 +36,16 @@ class LoginFragment : Fragment(R.layout.fragment_login){
         loginListeners()
 
 //        fragments
-        buttonReset.setOnClickListener(){
+        buttonReset.setOnClickListener() {
             findNavController().navigate(R.id.action_loginFragment_to_forgetPasswordFragment)
         }
 
-        buttonRegister.setOnClickListener(){
+        buttonRegister.setOnClickListener() {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
     }
 
-    private fun init(){
+    private fun init() {
         editTextMail = requireView().findViewById(R.id.editTextMail)
         editTextPassword = requireView().findViewById(R.id.editTextPassword)
         buttonLogin = requireView().findViewById(R.id.buttonLogin)
@@ -54,50 +54,53 @@ class LoginFragment : Fragment(R.layout.fragment_login){
 
     }
 
-    private fun loginListeners(){
-        buttonLogin.setOnClickListener{
+    private fun loginListeners() {
+        buttonLogin.setOnClickListener {
 
             val email = editTextMail.text.toString()
             val password = editTextPassword.text.toString()
 
-            if(email.isEmpty()){
+            if (email.isEmpty()) {
                 editTextMail.error = "Mail is empty!"
             }
-            if(password.isEmpty()){
+            if (password.isEmpty()) {
                 editTextPassword.error = "Password is empty!"
             }
-            if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                 editTextMail.error = "Enter valid e-mail address. Try again."
                 return@setOnClickListener
             }
-            if(!(email.matches(emailPattern.toRegex())) &&
-                !(email.matches(emailPattern2.toRegex()))){
+            if (!(email.matches(emailPattern.toRegex())) &&
+                !(email.matches(emailPattern2.toRegex()))
+            ) {
                 editTextMail.error = "Incorrect Email"
                 return@setOnClickListener
             }
             if (!(password.matches(".*[A-Z].*".toRegex())) &&
-                !(password.matches(".*[a-z].*".toRegex())) ){
+                !(password.matches(".*[a-z].*".toRegex()))
+            ) {
                 editTextPassword.error = "Must contain letters"
                 return@setOnClickListener
             }
-            if (!(password.matches(".*[0-9].*".toRegex()))){
+            if (!(password.matches(".*[0-9].*".toRegex()))) {
                 editTextPassword.error = "Must contain digits"
                 return@setOnClickListener
             }
-            if (!(password.matches(".*[$@#!?_].*".toRegex()))){
+            if (!(password.matches(".*[$@#!?_].*".toRegex()))) {
                 editTextPassword.error = "Must contain special symbols '$@#!?_'"
                 return@setOnClickListener
             }
             FirebaseAuth.getInstance()
-                .signInWithEmailAndPassword(email,password)
-                .addOnCompleteListener { task -> if(task.isSuccessful){
-           // findNavController().navigate(R.id.action_registerFragment_to_homeFragment2)
-                    startActivity(Intent(activity, HomeActivity::class.java))
-                    getActivity()?.finish()
+                .signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        // findNavController().navigate(R.id.action_registerFragment_to_homeFragment2)
+                        startActivity(Intent(activity, HomeActivity::class.java))
+                        getActivity()?.finish()
 
-                }else {
-                    Toast.makeText(activity, "Error", Toast.LENGTH_SHORT).show()
-                }
+                    } else {
+                        Toast.makeText(activity, "Error", Toast.LENGTH_SHORT).show()
+                    }
                 }
         }
 

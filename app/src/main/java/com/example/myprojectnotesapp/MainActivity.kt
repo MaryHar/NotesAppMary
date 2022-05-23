@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         val handle = Handler()
         handle.postDelayed({
             navigation.findNavController().navigate(R.id.introFragment)
-        },3000)
+        }, 3000)
     }
 
 }

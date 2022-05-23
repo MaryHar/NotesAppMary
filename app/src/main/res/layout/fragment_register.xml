@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    android:background="@color/pinkSecondaryDark"
     android:orientation="vertical"
     android:weightSum="4"
-    android:background="@color/pinkSecondaryDark">
+    tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,8 +39,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/seg_ui_semibold"
-                android:text="Join Notes app now today."
                 android:paddingStart="7dp"
+                android:text="Join Notes app now today."
                 android:textColor="@color/colorTextWhite"
                 android:textSize="18dp" />
         </LinearLayout>
@@ -48,11 +48,11 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:elevation="36dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:background="@drawable/card_background">
+        android:background="@drawable/card_background"
+        android:elevation="36dp">
 
         <TextView
             android:id="@+id/textView"

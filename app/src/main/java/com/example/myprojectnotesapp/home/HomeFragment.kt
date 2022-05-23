@@ -10,6 +10,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private lateinit var database: FirebaseDatabase
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-    database = FirebaseDatabase.getInstance()
-}
+        database = FirebaseDatabase.getInstance()
+    }
 }

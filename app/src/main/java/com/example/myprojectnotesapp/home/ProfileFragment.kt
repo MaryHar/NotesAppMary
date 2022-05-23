@@ -19,14 +19,14 @@ import com.google.firebase.database.ValueEventListener
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
-    private lateinit var imageViewPicture : ImageView
-    private lateinit var editTextName : EditText
-    private lateinit var textViewMail : TextView
-    private lateinit var signOut : Button
-    private lateinit var textViewChangePassword : TextView
-    private lateinit var buttonSave : Button
-    private lateinit var editTextUrl : EditText
-    private lateinit var editTextBio : EditText
+    private lateinit var imageViewPicture: ImageView
+    private lateinit var editTextName: EditText
+    private lateinit var textViewMail: TextView
+    private lateinit var signOut: Button
+    private lateinit var textViewChangePassword: TextView
+    private lateinit var buttonSave: Button
+    private lateinit var editTextUrl: EditText
+    private lateinit var editTextBio: EditText
 
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseDatabase.getInstance().getReference("UserInfo")
@@ -43,9 +43,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         val userMail = FirebaseAuth.getInstance().currentUser?.email
         textViewMail.text = userMail
 
-        db.child(auth.currentUser?.uid!!).addValueEventListener(object: ValueEventListener{
+        db.child(auth.currentUser?.uid!!).addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val userInfo : UserInfo = snapshot.getValue(UserInfo::class.java) ?: return
+                val userInfo: UserInfo = snapshot.getValue(UserInfo::class.java) ?: return
 
                 if (userInfo.name.isNotEmpty()) {
                     editTextName.hint = userInfo.name
@@ -57,8 +57,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                     editTextUrl.hint = userInfo.url
                 }
 
-                Glide.with(requireActivity()).load(userInfo.url).
-                placeholder(R.drawable.profile_picture).into(imageViewPicture)
+                Glide.with(requireActivity()).load(userInfo.url)
+                    .placeholder(R.drawable.profile_picture).into(imageViewPicture)
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -67,7 +67,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         })
     }
 
-    private fun init(){
+    private fun init() {
         imageViewPicture = requireView().findViewById(R.id.imageViewPicture)
         textViewMail = requireView().findViewById(R.id.textViewMail)
         signOut = requireView().findViewById(R.id.signOut)
@@ -79,10 +79,11 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     }
 
     private fun changePasswordListener() {
-        textViewChangePassword.setOnClickListener(){
+        textViewChangePassword.setOnClickListener() {
             findNavController().navigate(R.id.action_profileFragment_to_changePasswordFragment2)
         }
     }
+
     private fun saveButtonListeners() {
         buttonSave.setOnClickListener {
 
@@ -104,8 +105,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         }
     }
 
-    private fun signOutListener(){
-        signOut.setOnClickListener(){
+    private fun signOutListener() {
+        signOut.setOnClickListener() {
             FirebaseAuth.getInstance().signOut()
             startActivity(Intent(activity, MainActivity::class.java))
             activity?.finish()
