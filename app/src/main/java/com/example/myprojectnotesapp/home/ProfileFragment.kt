@@ -110,6 +110,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             FirebaseAuth.getInstance().signOut()
             startActivity(Intent(activity, MainActivity::class.java))
             activity?.finish()
+          //  findNavController().navigate(R.id.action_profile_to_registerFragment2)
+
         }
     }
 }

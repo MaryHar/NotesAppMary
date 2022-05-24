@@ -83,22 +83,14 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 editPassword2.error = "Passwords don't match"
                 return@setOnClickListener
             }
-            FirebaseAuth.getInstance().createUserWithEmailAndPassword(mail, pass)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(
-                            getActivity(),
-                            "You signed up succesfully!",
-                            Toast.LENGTH_SHORT
-                        )
-                            .show();
-                        // findNavController().navigate(R.id.action_registerFragment_to_homeFragment2)
-                        startActivity(Intent(activity, HomeActivity::class.java))
-                        getActivity()?.finish()
-                    } else Toast.makeText(getActivity(), "Error!", Toast.LENGTH_SHORT).show()
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(mail,pass)
+                .addOnCompleteListener{ task-> if(task.isSuccessful) {
+                    Toast. makeText(getActivity(),"You signed up succesfully!",Toast. LENGTH_SHORT)
+                        . show();
+                    startActivity(Intent(activity, HomeActivity::class.java))
+                    getActivity()?.finish()
                 }
-
-
+                else Toast.makeText(getActivity(), "Error!", Toast.LENGTH_SHORT).show()}
         }
     }
 }

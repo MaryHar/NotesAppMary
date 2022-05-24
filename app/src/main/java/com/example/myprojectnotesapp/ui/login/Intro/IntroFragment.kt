@@ -71,14 +71,14 @@ class IntroFragment : Fragment() {
         val introList: MutableList<IntroSlide> = ArrayList()
         introList.add(
             IntroSlide(
-                R.drawable.splash_screen,
+                R.drawable.splash_screen2,
                 getString(R.string.body),
                 getString(R.string.notes)
             )
         )
         introList.add(
             IntroSlide(
-                R.drawable.splash_screen2,
+                R.drawable.splash_screen,
                 getString(R.string.body),
                 getString(R.string.notes)
             )

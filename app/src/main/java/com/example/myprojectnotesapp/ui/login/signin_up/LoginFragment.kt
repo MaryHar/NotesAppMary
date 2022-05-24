@@ -91,19 +91,18 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 return@setOnClickListener
             }
             FirebaseAuth.getInstance()
-                .signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        // findNavController().navigate(R.id.action_registerFragment_to_homeFragment2)
-                        startActivity(Intent(activity, HomeActivity::class.java))
-                        getActivity()?.finish()
+                .signInWithEmailAndPassword(email,password)
+                .addOnCompleteListener { task -> if(task.isSuccessful){
 
-                    } else {
-                        Toast.makeText(activity, "Error", Toast.LENGTH_SHORT).show()
-                    }
+                    startActivity(Intent(activity, HomeActivity::class.java))
+                    getActivity()?.finish()
+
+
+                }else {
+                    Toast.makeText(activity, "Error", Toast.LENGTH_SHORT).show()
+                }
                 }
         }
 
     }
-
 }
