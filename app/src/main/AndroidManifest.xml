@@ -12,7 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyProjectNotesApp">
         <activity
-            android:name=".home.HomeActivity"
+            android:name=".home.activity.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.activity.EditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.activity.DetailNoteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.activity.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

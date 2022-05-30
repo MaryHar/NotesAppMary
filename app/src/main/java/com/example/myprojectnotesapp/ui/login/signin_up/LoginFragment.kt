@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.myprojectnotesapp.R
-import com.example.myprojectnotesapp.home.HomeActivity
+import com.example.myprojectnotesapp.home.activity.HomeActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
@@ -27,10 +27,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        if (FirebaseAuth.getInstance().currentUser !=null){
-//            startActivity(Intent(activity, HomeActivity::class.java))
-//            getActivity()?.finish()
-//        }
+        if (FirebaseAuth.getInstance().currentUser !=null){
+            startActivity(Intent(activity, HomeActivity::class.java))
+            getActivity()?.finish()
+        }
 
         init()
         loginListeners()

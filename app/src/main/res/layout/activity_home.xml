@@ -4,22 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home.HomeActivity">
+    tools:context=".home.activity.HomeActivity">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_home" />
 
-    <fragment
-        android:id="@+id/nav_host_fragment_notes"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="55dp"
-        app:defaultNavHost="true"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="416dp"
+        android:layout_height="649dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:navGraph="@navigation/nav_page_home" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <fragment
+            android:id="@+id/nav_host_fragment_notes"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_page_home" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:background="@color/pinkSecondaryDark"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/colorTitle"
+            app:tabTextColor="@color/colorGrey" />
+    </androidx.viewpager.widget.ViewPager>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="278dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/pinkSecondaryDark"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_round_add"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -30,4 +62,5 @@
         app:itemTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_navigation_menu" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
