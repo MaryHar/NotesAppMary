@@ -78,7 +78,7 @@ class DetailNoteActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun deleteNote(note: Note) {
         notesViewModel.deleteNote(note)
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, HomeActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
         finish()

@@ -11,13 +11,14 @@ import com.example.myprojectnotesapp.fragment.AllNotesFragment
 import com.example.myprojectnotesapp.fragment.PersonalNotesFragment
 import com.example.myprojectnotesapp.fragment.StudyNotesFragment
 import com.example.myprojectnotesapp.fragment.WorkNotesFragment
+import com.example.myprojectnotesapp.home.ProfileFragment
 
 
 class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) :
     FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
     @StringRes
     private val tabTitles =
-        intArrayOf(R.string.tab_all, R.string.tab_personal, R.string.tab_work, R.string.tab_study)
+        intArrayOf(R.string.tab_all, R.string.tab_personal, R.string.tab_work, R.string.tab_study, R.string.tab_settings)
 
     override fun getItem(position: Int): Fragment {
         var fragment: Fragment? = null
@@ -30,6 +31,9 @@ class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) :
                 WorkNotesFragment()
             3 -> fragment =
                 StudyNotesFragment()
+            4 -> fragment =
+                ProfileFragment()
+
         }
         return fragment as Fragment
     }
@@ -40,6 +44,6 @@ class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) :
     }
 
     override fun getCount(): Int {
-        return 4
+        return 5
     }
 }

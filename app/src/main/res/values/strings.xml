@@ -20,6 +20,7 @@
     <string name="tab_personal">Personal</string>
     <string name="tab_work">Work</string>
     <string name="tab_study">Study</string>
+    <string name="tab_settings">Setting</string>
     <string name="note">Note</string>
     <string name="note_is_empty">Note is empty</string>
     <string name="save">Save</string>

@@ -79,7 +79,7 @@ class EditActivity : AppCompatActivity(), View.OnClickListener {
     private fun deleteNote(note: Note) {
 
         notesViewModel.deleteNote(note)
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, HomeActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
         finish()
@@ -128,7 +128,7 @@ class EditActivity : AppCompatActivity(), View.OnClickListener {
                     }
 
                     Toast.makeText(this@EditActivity, "Note saved", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, HomeActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     startActivity(intent)
                     finish()
