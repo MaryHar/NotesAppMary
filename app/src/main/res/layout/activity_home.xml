@@ -11,11 +11,14 @@
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
-        android:layout_width="416dp"
-        android:layout_height="649dp"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_height="655dp"
+        android:layout_marginTop="76dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toTopOf="@+id/toolbar">
 
         <fragment
             android:id="@+id/nav_host_fragment_notes"
@@ -29,12 +32,14 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="75dp"
             android:layout_below="@id/toolbar"
-            android:background="@color/pinkSecondaryDark"
+            android:background="@drawable/card_backgroun_cyan1"
             app:tabMode="scrollable"
-            app:tabSelectedTextColor="@color/colorTitle"
-            app:tabTextColor="@color/colorGrey" />
+            app:tabSelectedTextColor="#D89CE3"
+            app:tabTextColor="@color/white"
+            app:tabGravity="center"/>
+
     </androidx.viewpager.widget.ViewPager>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -49,18 +54,9 @@
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/ic_round_add"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/card_backgroun_cyan"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottom_navigation_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

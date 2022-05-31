@@ -16,7 +16,7 @@
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="notes">Your Notes</string>
-    <string name="tab_all">All</string>
+    <string name="tab_all">All Notes</string>
     <string name="tab_personal">Personal</string>
     <string name="tab_work">Work</string>
     <string name="tab_study">Study</string>
@@ -30,6 +30,8 @@
     <string name="delete">Delete</string>
     <string name="share">Share</string>
     <string name="menu">Menu</string>
+    <string name="change_password">Change password</string>
+    <string name="forget_password">Forget password</string>
 
     <string-array name="labels">
         <item>Personal</item>

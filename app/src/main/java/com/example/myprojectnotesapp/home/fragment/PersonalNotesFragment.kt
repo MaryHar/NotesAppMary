@@ -1,4 +1,4 @@
-package com.example.myprojectnotesapp.fragment
+package com.example.myprojectnotesapp.home.fragment
 
 import android.content.Intent
 import android.os.Bundle

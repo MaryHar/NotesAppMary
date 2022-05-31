@@ -3,12 +3,11 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/pinkSecondaryDark"
+    android:background="@drawable/card_backgroun_cyan1"
     android:elevation="3dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:background="@color/pinkSecondaryDark"
 
         android:layout_height="wrap_content">
 
@@ -40,12 +39,14 @@
             android:id="@+id/nib_edit"
             android:layout_width="68dp"
             android:layout_height="68dp"
-            android:scaleType="centerInside"
+            android:layout_marginEnd="16dp"
             android:backgroundTint="@color/pinkSecondaryDark"
+            android:scaleType="centerInside"
             android:src="@drawable/ic_edit"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

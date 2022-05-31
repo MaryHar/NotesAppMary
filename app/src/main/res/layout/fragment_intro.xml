@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/pinkPrimaryBack">
+    android:background="#FBE9FB">
 
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/introSliderViewPager"
         android:layout_width="match_parent"
         android:layout_height="460dp"
-        android:background="@color/white"
+        android:background="@drawable/card_background1"
         android:overScrollMode="never"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,12 +39,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
         android:background="@drawable/button_background"
+        android:fontFamily="@font/seg_ui_semibold"
         android:minWidth="110dp"
         android:text="Get started"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="16sp"
-        android:fontFamily="@font/seg_ui_semibold"
+        android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

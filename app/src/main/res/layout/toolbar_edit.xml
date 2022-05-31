@@ -3,7 +3,7 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/pinkSecondaryDark"
+    android:background="@drawable/card_backgroun_cyan1"
     android:elevation="3dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,14 +37,16 @@
             android:id="@+id/btn_save"
             android:layout_width="99dp"
             android:layout_height="65dp"
-            android:text="@string/save"
-            android:textSize="16sp"
+            android:layout_marginEnd="16dp"
             android:backgroundTint="@color/pinkSecondaryDark"
-            android:textColor="@color/white"
+            android:text="@string/save"
             android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/nib_back"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/nib_back" />
+            app:layout_constraintTop_toTopOf="@+id/nib_back"
+            app:layout_constraintVertical_bias="0.666" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

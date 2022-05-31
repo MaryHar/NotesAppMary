@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:elevation="3dp"
-    android:background="@color/pinkSecondaryDark"
+    android:background="@drawable/card_backgroun_cyan1"
     android:orientation="horizontal">
 
     <androidx.constraintlayout.widget.ConstraintLayout

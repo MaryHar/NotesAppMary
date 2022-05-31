@@ -1,13 +1,12 @@
 package com.example.myprojectnotesapp.home.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.myprojectnotesapp.MainActivity
 import com.example.myprojectnotesapp.R
 import com.example.myprojectnotesapp.databinding.ActivityDetailNoteBinding
 import com.example.myprojectnotesapp.databinding.BottomsheetNoteBinding

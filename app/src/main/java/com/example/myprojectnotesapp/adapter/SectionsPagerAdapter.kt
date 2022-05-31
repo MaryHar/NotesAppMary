@@ -7,19 +7,17 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.example.myprojectnotesapp.R
-import com.example.myprojectnotesapp.fragment.AllNotesFragment
-import com.example.myprojectnotesapp.fragment.PersonalNotesFragment
-import com.example.myprojectnotesapp.fragment.StudyNotesFragment
-import com.example.myprojectnotesapp.fragment.WorkNotesFragment
-import com.example.myprojectnotesapp.home.ProfileFragment
+import com.example.myprojectnotesapp.home.fragment.AllNotesFragment
+import com.example.myprojectnotesapp.home.fragment.PersonalNotesFragment
+import com.example.myprojectnotesapp.home.fragment.StudyNotesFragment
+import com.example.myprojectnotesapp.home.fragment.WorkNotesFragment
 
 
 class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) :
     FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
     @StringRes
     private val tabTitles =
-        intArrayOf(R.string.tab_all, R.string.tab_personal, R.string.tab_work, R.string.tab_study, R.string.tab_settings)
-
+        intArrayOf(R.string.tab_all, R.string.tab_personal, R.string.tab_work, R.string.tab_study)
     override fun getItem(position: Int): Fragment {
         var fragment: Fragment? = null
         when (position) {
@@ -31,8 +29,6 @@ class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) :
                 WorkNotesFragment()
             3 -> fragment =
                 StudyNotesFragment()
-            4 -> fragment =
-                ProfileFragment()
 
         }
         return fragment as Fragment
@@ -44,6 +40,6 @@ class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) :
     }
 
     override fun getCount(): Int {
-        return 5
+        return 4
     }
 }
