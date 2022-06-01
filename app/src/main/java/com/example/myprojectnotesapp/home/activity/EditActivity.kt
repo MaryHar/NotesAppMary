@@ -13,6 +13,8 @@ import com.example.myprojectnotesapp.databinding.ActivityEditBinding
 import com.example.myprojectnotesapp.entity.Note
 import com.example.myprojectnotesapp.method.DateChange
 import com.example.myprojectnotesapp.viewModel.NotesViewModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class EditActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityEditBinding
@@ -21,6 +23,7 @@ class EditActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var note: Note
     private var isUpdate = false
     private val dateChange = DateChange()
+    lateinit var mAuth: FirebaseAuth
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -92,12 +95,26 @@ class EditActivity : AppCompatActivity(), View.OnClickListener {
                 onBackPressed()
             }
             R.id.btn_save -> {
+                mAuth = FirebaseAuth.getInstance()
+                val fireStoreDatabase = FirebaseFirestore.getInstance()
                 val title = binding.editTextTitle.text.toString()
                 val body = binding.editTextBody.text.toString()
                 val label = binding.spLabel.selectedItem.toString()
                 val date = dateChange.getToday()
                 val time = dateChange.getTime()
-
+                val hashMap = hashMapOf<String, Any>(
+                    "title" to title,
+                    "body" to body,
+                    "label" to label,
+                    "date" to date,
+                    "time" to time
+                    )
+                if (mAuth.currentUser != null) {
+                    fireStoreDatabase.collection("NotesData")
+                        .document(mAuth.currentUser!!.uid).set(hashMap).addOnSuccessListener {
+                            Toast.makeText(this, "add data fireStore", Toast.LENGTH_SHORT).show()
+                        }
+                }
                 if (title.isEmpty() && body.isEmpty()) {
                     Toast.makeText(this@EditActivity, "Note cannot be empty", Toast.LENGTH_SHORT)
                         .show()
