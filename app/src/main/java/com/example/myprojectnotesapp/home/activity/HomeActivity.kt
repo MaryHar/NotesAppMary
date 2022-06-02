@@ -1,22 +1,19 @@
 package com.example.myprojectnotesapp.home.activity
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
 import android.view.*
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.myprojectnotesapp.MainActivity
 import com.example.myprojectnotesapp.R
 import com.example.myprojectnotesapp.adapter.SectionsPagerAdapter
 import com.example.myprojectnotesapp.databinding.ActivityHomeBinding
-import com.example.myprojectnotesapp.databinding.BottomsheetNoteBinding
 import com.example.myprojectnotesapp.databinding.BottomsheetSettingsBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_home.*
@@ -36,8 +33,8 @@ class HomeActivity : AppCompatActivity() , View.OnClickListener {
 
         initView()
         initListener()
-    }
 
+    }
 
 
     private fun initView() {
@@ -55,6 +52,7 @@ class HomeActivity : AppCompatActivity() , View.OnClickListener {
         binding.floatingActionButton.setOnClickListener(this)
         binding.toolbar.ibMenu.setOnClickListener(this)
     }
+
     private fun showBottomSheet() {
         val views: View =
             LayoutInflater.from(this).inflate(R.layout.bottomsheet_settings, null)
@@ -67,8 +65,7 @@ class HomeActivity : AppCompatActivity() , View.OnClickListener {
         dialog.setContentView(views)
         dialog.show()
 
-        bindingBottom.clDelete.setOnClickListener(this)
-        bindingBottom.clShare.setOnClickListener(this)
+        bindingBottom.clChangePassword.setOnClickListener(this)
         bindingBottom.clSignOut.setOnClickListener(this)
 
     }
@@ -100,6 +97,9 @@ class HomeActivity : AppCompatActivity() , View.OnClickListener {
                 startActivity(Intent(this, EditActivity::class.java))
             }
 
+            R.id.cl_changePassword -> {
+                findNavController(0).navigate(R.id.action_homeFragment_to_changePasswordFragment)
+            }
         }
     }
 

@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     android:padding="10dp">
 
     <View
@@ -22,20 +23,21 @@
         android:background="@color/colorGrey" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_delete"
+        android:id="@+id/cl_changePassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:clickable="true"
+        android:background="@color/white"
         android:foreground="?android:attr/selectableItemBackground"
         android:focusable="true">
 
         <ImageView
-            android:id="@+id/iv_delete"
+            android:id="@+id/iv_changePassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:src="@drawable/ic_delete"
+            android:src="@drawable/ic_baseline_lock_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/colorTitle" />
@@ -47,42 +49,9 @@
             android:text="@string/change_password"
             android:textColor="@color/colorTitle"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_delete"
-            app:layout_constraintStart_toEndOf="@+id/iv_delete"
-            app:layout_constraintTop_toTopOf="@+id/iv_delete" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_share"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:focusable="true">
-
-        <ImageView
-            android:id="@+id/iv_share"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:src="@drawable/ic_share"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/colorTitle" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/forget_password"
-            android:textColor="@color/colorTitle"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_share"
-            app:layout_constraintStart_toEndOf="@+id/iv_share"
-            app:layout_constraintTop_toTopOf="@+id/iv_share" />
-
+            app:layout_constraintBottom_toBottomOf="@+id/iv_changePassword"
+            app:layout_constraintStart_toEndOf="@+id/iv_changePassword"
+            app:layout_constraintTop_toTopOf="@+id/iv_changePassword" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -92,11 +61,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:clickable="true"
+        android:background="@color/white"
         android:foreground="?android:attr/selectableItemBackground"
         android:focusable="true">
 
         <ImageView
-            android:id="@+id/iv_share1"
+            android:id="@+id/iv_signOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
@@ -112,9 +82,9 @@
             android:text="Sign out"
             android:textColor="@color/colorTitle"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_share1"
-            app:layout_constraintStart_toEndOf="@+id/iv_share1"
-            app:layout_constraintTop_toTopOf="@+id/iv_share1" />
+            app:layout_constraintBottom_toBottomOf="@+id/iv_signOut"
+            app:layout_constraintStart_toEndOf="@+id/iv_signOut"
+            app:layout_constraintTop_toTopOf="@+id/iv_signOut" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,10 +5,11 @@
     <!-- view background color -->
     <solid
         android:color="@color/colorBgBtn">
+
     </solid>
 
     <!-- Here is the corner radius -->
-    <corners android:radius="10dp" >
+    <corners android:radius="100dp" >
     </corners>
 
 </shape>

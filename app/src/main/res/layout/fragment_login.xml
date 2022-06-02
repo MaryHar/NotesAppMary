@@ -124,9 +124,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12dp"
                     android:layout_weight="3"
-                    android:fontFamily="@font/seg_ui_semibold"
                     android:text="Forgot password?"
-                    android:textColor="@color/colorTextBlack"
+                    android:fontFamily="@font/segoe_ui_bold"
+                    android:textColor="@color/pinkSecondaryDark"
                     android:textSize="16dp" />
 
                 <androidx.appcompat.widget.AppCompatButton

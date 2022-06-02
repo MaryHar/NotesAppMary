@@ -27,7 +27,7 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="55dp"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_page_home" />
+            app:navGraph="@navigation/nav_page" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"

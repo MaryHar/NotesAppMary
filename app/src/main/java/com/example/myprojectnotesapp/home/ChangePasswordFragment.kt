@@ -53,7 +53,7 @@ class ChangePasswordFragment : Fragment(R.layout.fragment_change_password) {
                 ?.addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(activity, "Password Changed !", Toast.LENGTH_SHORT).show()
-                        findNavController().navigate(R.id.action_changePasswordFragment_to_profileFragment)
+                        findNavController().navigate(R.id.action_changePasswordFragment_to_homeFragment)
                     } else {
                         Toast.makeText(activity, "Error !", Toast.LENGTH_SHORT).show()
 
