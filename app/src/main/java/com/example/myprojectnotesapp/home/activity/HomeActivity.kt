@@ -1,14 +1,24 @@
 package com.example.myprojectnotesapp.home.activity
 
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.AttributeSet
+import android.util.Log
 import android.view.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentContainerView
 import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.myprojectnotesapp.MainActivity
 import com.example.myprojectnotesapp.R
 import com.example.myprojectnotesapp.adapter.SectionsPagerAdapter
@@ -18,11 +28,13 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.bottomsheet_settings.*
+import kotlinx.android.synthetic.main.change_password_dialog.*
 
 class HomeActivity : AppCompatActivity() , View.OnClickListener {
     private lateinit var binding: ActivityHomeBinding
     private lateinit var dialog: BottomSheetDialog
-
+    private lateinit var changeDialog: View
+    private lateinit var editTextPassword: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -36,10 +48,10 @@ class HomeActivity : AppCompatActivity() , View.OnClickListener {
 
     }
 
-
     private fun initView() {
 
-        val sectionsPagerAdapter = SectionsPagerAdapter(this,
+        val sectionsPagerAdapter = SectionsPagerAdapter(
+            this,
             supportFragmentManager
         )
         binding.viewPager.adapter = sectionsPagerAdapter
@@ -69,15 +81,9 @@ class HomeActivity : AppCompatActivity() , View.OnClickListener {
         bindingBottom.clSignOut.setOnClickListener(this)
 
     }
-    private fun signOutListener() {
-        cl_signOut.setOnClickListener() {
-            FirebaseAuth.getInstance().signOut()
-            startActivity(Intent(this, MainActivity::class.java))
-            this?.finish()
-            //  findNavController().navigate(R.id.action_profile_to_registerFragment2)
 
-        }
-    }
+
+
     override fun onClick(v: View) {
         when (v.id) {
             R.id.ib_search -> {
@@ -98,10 +104,56 @@ class HomeActivity : AppCompatActivity() , View.OnClickListener {
             }
 
             R.id.cl_changePassword -> {
-                findNavController(0).navigate(R.id.action_homeFragment_to_changePasswordFragment)
+                changeDialog =
+                    LayoutInflater
+                        .from(this)
+                        .inflate(R.layout.change_password_dialog, null)
+
+                val mBuilder = AlertDialog.Builder(this)
+                    .setView(changeDialog)
+                    .setTitle("Change Password")
+                val mAlertDialog = mBuilder.show()
+
+                changeDialog.findViewById<Button>(R.id.buttonCancel).setOnClickListener {
+                    mAlertDialog.dismiss()
+                }
+                changeDialog.findViewById<Button>(R.id.buttonChangePassword).setOnClickListener {
+                    editTextPassword = changeDialog.findViewById(R.id.editTextPassword)
+                    val passwordChange = editTextPassword.text.toString()
+
+                        if (passwordChange.isEmpty()) {
+                            editTextPassword.error = "Password is empty!"
+                        }
+                        if (!(passwordChange.matches(".*[A-Z].*".toRegex())) &&
+                            !(passwordChange.matches(".*[a-z].*".toRegex()))
+                        ) {
+                            editTextPassword.error = "Must contain letters"
+                            return@setOnClickListener
+                        }
+                        if (!(passwordChange.matches(".*[0-9].*".toRegex()))) {
+                            editTextPassword.error = "Must contain digits"
+                            return@setOnClickListener
+                        }
+                        if (!(passwordChange.matches(".*[$@#!?_].*".toRegex()))) {
+                            editTextPassword.error = "Must contain special symbols '$@#!?_'"
+                            return@setOnClickListener
+                        }
+                        FirebaseAuth.getInstance().currentUser?.updatePassword(passwordChange)
+                            ?.addOnCompleteListener { task ->
+                                if (task.isSuccessful) {
+                                    startActivity(Intent(this, HomeActivity::class.java))
+
+                                } else {
+                                    mAlertDialog.dismiss()
+
+                                }
+                            }
+                }
+
+                    }
+
+                }
             }
+
         }
-    }
 
-
-}

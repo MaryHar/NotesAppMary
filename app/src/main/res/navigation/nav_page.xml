@@ -68,5 +68,9 @@
     <fragment
         android:id="@+id/changePasswordFragment2"
         android:name="com.example.myprojectnotesapp.home.ChangePasswordFragment"
-        android:label="ChangePasswordFragment" />
+        android:label="ChangePasswordFragment" >
+        <action
+            android:id="@+id/action_changePasswordFragment2_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
 </navigation>
