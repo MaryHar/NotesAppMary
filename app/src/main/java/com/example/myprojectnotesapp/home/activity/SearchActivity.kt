@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.AutoCompleteTextView
 import android.widget.LinearLayout
 import android.widget.SearchView
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -91,7 +92,8 @@ class SearchActivity : AppCompatActivity(), SearchView.OnQueryTextListener, View
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
-        TODO("Not yet implemented")
+        Toast.makeText(this, "There is post with that title", Toast.LENGTH_SHORT).show()
+        return true
     }
 
     override fun onQueryTextChange(keyWord: String?): Boolean {
