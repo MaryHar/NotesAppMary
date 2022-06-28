@@ -1,34 +1,21 @@
 package com.example.myprojectnotesapp.home.activity
 
 import android.app.AlertDialog
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.util.AttributeSet
-import android.util.Log
 import android.view.*
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainerView
-import androidx.navigation.Navigation
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.myprojectnotesapp.MainActivity
 import com.example.myprojectnotesapp.R
 import com.example.myprojectnotesapp.adapter.SectionsPagerAdapter
 import com.example.myprojectnotesapp.databinding.ActivityHomeBinding
 import com.example.myprojectnotesapp.databinding.BottomsheetSettingsBinding
+import com.example.myprojectnotesapp.voice.view.MainVoiceActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.bottomsheet_settings.*
-import kotlinx.android.synthetic.main.change_password_dialog.*
 
 class HomeActivity : AppCompatActivity() , View.OnClickListener {
     private lateinit var binding: ActivityHomeBinding
@@ -63,6 +50,7 @@ class HomeActivity : AppCompatActivity() , View.OnClickListener {
         binding.toolbar.ibSearch.setOnClickListener(this)
         binding.floatingActionButton.setOnClickListener(this)
         binding.toolbar.ibMenu.setOnClickListener(this)
+        binding.toolbar.ibVoice.setOnClickListener(this)
     }
 
     private fun showBottomSheet() {
@@ -93,7 +81,10 @@ class HomeActivity : AppCompatActivity() , View.OnClickListener {
             R.id.ib_menu -> {
                 showBottomSheet()
             }
-
+            R.id.ib_voice -> {
+                val intent = Intent(this, MainVoiceActivity::class.java)
+                startActivity(intent)
+            }
             R.id.cl_signOut -> {
                 FirebaseAuth.getInstance().signOut()
                 startActivity(Intent(this, MainActivity::class.java))

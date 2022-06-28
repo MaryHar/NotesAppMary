@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myprojectnotesapp">
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,6 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyProjectNotesApp">
+        <activity
+            android:name=".voice.view.Main1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".voice.view.MainVoiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".voice.view.PlayerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".voice.view.ListingActivity"
+            android:exported="false" />
         <activity
             android:name=".home.activity.SearchActivity"
             android:exported="false" />

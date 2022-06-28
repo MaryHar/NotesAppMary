@@ -33,7 +33,7 @@
             app:destination="@id/forgetPasswordFragment" />
         <action
             android:id="@+id/action_loginFragment_to_homeFragment2"
-            app:destination="@id/homeFragment2" />
+          />
         <action
             android:id="@+id/action_loginFragment_to_introFragment"
             app:destination="@id/introFragment" />
@@ -47,7 +47,7 @@
             app:destination="@id/loginFragment" />
         <action
             android:id="@+id/action_registerFragment_to_homeFragment2"
-            app:destination="@id/homeFragment2" />
+            />
     </fragment>
     <fragment
         android:id="@+id/forgetPasswordFragment"
@@ -57,20 +57,6 @@
             android:id="@+id/action_forgetPasswordFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/homeFragment2"
-        android:name="com.example.myprojectnotesapp.home.HomeFragment"
-        android:label="HomeFragment" >
-        <action
-            android:id="@+id/action_homeFragment2_to_changePasswordFragment2"
-            app:destination="@id/changePasswordFragment2" />
-    </fragment>
-    <fragment
-        android:id="@+id/changePasswordFragment2"
-        android:name="com.example.myprojectnotesapp.home.ChangePasswordFragment"
-        android:label="ChangePasswordFragment" >
-        <action
-            android:id="@+id/action_changePasswordFragment2_to_homeFragment2"
-            app:destination="@id/homeFragment2" />
-    </fragment>
+
+
 </navigation>

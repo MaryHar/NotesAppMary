@@ -5,20 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".home.activity.HomeActivity">
+
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar_home" />
+        layout="@layout/toolbar_home"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-6dp" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="wrap_content"
-        android:gravity="center_horizontal"
         android:layout_height="655dp"
-        android:layout_marginTop="76dp"
+        android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav_host_fragment_notes"
@@ -35,10 +37,10 @@
             android:layout_height="75dp"
             android:layout_below="@id/toolbar"
             android:background="@drawable/card_backgroun_cyan1"
+            app:tabGravity="center"
             app:tabMode="scrollable"
             app:tabSelectedTextColor="#D89CE3"
-            app:tabTextColor="@color/white"
-            app:tabGravity="center"/>
+            app:tabTextColor="@color/white" />
 
     </androidx.viewpager.widget.ViewPager>
 
