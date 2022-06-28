@@ -43,7 +43,6 @@ class BottomSheet: BottomSheetDialogFragment {
 
         dialog?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
-
         filename = filename.split(".mp3")[0]
         editText.setText(filename)
 
@@ -58,30 +57,17 @@ class BottomSheet: BottomSheetDialogFragment {
                 var newFile = File("$dirPath$updatedFilename.mp3")
                 File(dirPath+filename).renameTo(newFile)
             }
-
-            // add entry to db
-
-            // dismiss dialog
             dismiss()
-
-            // fire ok callback
             listener.onOkClicked("$dirPath$updatedFilename.mp3", updatedFilename)
         }
 
         view.findViewById<Button>(R.id.cancelBtn).setOnClickListener {
-            // hide keyboard
             hideKeyboard(view)
-            // delete file from storage
             File(dirPath+filename).delete()
-
-            // dismiss dialog
             dismiss()
-            // fire cancel callback
             listener.onCancelClicked()
         }
-
         return view
-
     }
 
     private fun showKeyboard(view: View) {
@@ -90,10 +76,8 @@ class BottomSheet: BottomSheetDialogFragment {
             imm?.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
         }
     }
-
     private fun hideKeyboard(view: View) {
         val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
         imm?.hideSoftInputFromWindow(view.windowToken, 0)
     }
-
 }

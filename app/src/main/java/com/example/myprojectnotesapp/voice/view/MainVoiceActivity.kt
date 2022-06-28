@@ -1,7 +1,6 @@
 package com.example.myprojectnotesapp.voice.view
 
 import android.Manifest
-import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.media.MediaRecorder
@@ -9,19 +8,13 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.content.res.ResourcesCompat
 import androidx.room.Room
-import com.example.myprojectnotesapp.MainActivity
 import com.example.myprojectnotesapp.R
 import com.example.myprojectnotesapp.home.activity.EditActivity
-import com.example.myprojectnotesapp.home.activity.HomeActivity
-import com.example.myprojectnotesapp.home.activity.SearchActivity
 import com.example.myprojectnotesapp.voice.db.AppDatabase
 import com.example.myprojectnotesapp.voice.db.AudioRecord
 import kotlinx.android.synthetic.main.activity_main_voice.*
@@ -33,13 +26,8 @@ import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 import com.example.myprojectnotesapp.voice.tools.Timer
-import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_main_voice.*
 import kotlinx.android.synthetic.main.activity_main_voice.playerView
-import kotlinx.android.synthetic.main.activity_player.*
 import kotlinx.android.synthetic.main.toolbar_voice_home.*
-import kotlinx.coroutines.launch
-import java.util.*
 private const val LOG_TAG = "AudioRecordTest"
 private const val REQUEST_RECORD_AUDIO_PERMISSION = 200
 
@@ -129,7 +117,6 @@ class MainVoiceActivity : AppCompatActivity(), BottomSheet.OnClickListener, Time
         timer = Timer(this)
         timer.start()
 
-        // format file name with date
         val pattern = "yyyy.MM.dd_hh.mm.ss"
         val simpleDateFormat = SimpleDateFormat(pattern)
         val date: String = simpleDateFormat.format(Date())
@@ -155,7 +142,6 @@ class MainVoiceActivity : AppCompatActivity(), BottomSheet.OnClickListener, Time
         recordBtn.setImageResource(R.drawable.ic_pause)
 
         animatePlayerView()
-
     }
 
     private fun animatePlayerView(){

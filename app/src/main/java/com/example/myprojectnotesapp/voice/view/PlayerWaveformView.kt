@@ -45,7 +45,7 @@ class PlayerWaveformView: View {
         spikes = Array<RectF>(nbSpikes){ RectF() }
 
         paintRead = Paint() //Paint.ANTI_ALIAS_FLAG
-        paintRead.color = Color.rgb(244, 81, 30) // orange
+        paintRead.color = Color.rgb(230, 25, 229)
 
         // get screen width
         val displayMetrics = resources.displayMetrics

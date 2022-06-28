@@ -41,13 +41,10 @@ class RecorderWaveformView: View {
         init(attrs)
     }
 
-    // this function is to avoid duplicating code in every constructor
-    // indeed each constructor is called in a specific situation
-    // and we want the View to de the same thing no matter what
     private fun init(attrs: AttributeSet?){
         amplitudes = ArrayList()
         paintRead = Paint() //Paint.ANTI_ALIAS_FLAG
-        paintRead.color = Color.rgb(244, 81, 30) // orange
+        paintRead.color = Color.rgb(230, 25, 229)
 
         // get screen width
         val displayMetrics = resources.displayMetrics
@@ -84,9 +81,6 @@ class RecorderWaveformView: View {
     }
 
     override fun onDraw(canvas: Canvas?) {
-        // this may be called several times on start or create
-        // therefore we shouldn't initialize objects here
-
         spikes.forEach {
             canvas?.drawRoundRect(it, 6f, 6f,paintRead)
         }

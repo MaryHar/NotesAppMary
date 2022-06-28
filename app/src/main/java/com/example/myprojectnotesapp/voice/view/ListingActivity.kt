@@ -27,7 +27,6 @@ class ListingActivity : AppCompatActivity(), Adapter.OnItemClickListener {
     private lateinit var audioRecords : List<AudioRecord>
     private lateinit var db : AppDatabase
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<LinearLayout>
-    private lateinit var menu : Menu
     private var allSelected = false
     private var nbSelected = 0
 
@@ -69,7 +68,6 @@ class ListingActivity : AppCompatActivity(), Adapter.OnItemClickListener {
                 var query = p0.toString()
                 searchDatabase("%$query%")
             }
-
         })
 
         btnSelectAll.setOnClickListener {
@@ -105,14 +103,12 @@ class ListingActivity : AppCompatActivity(), Adapter.OnItemClickListener {
         btnRename.setOnClickListener {
             Toast.makeText(this, "rename clicked", Toast.LENGTH_SHORT).show()
         }
-
     }
 
     private fun closeEditor(){
         allSelected = false
         adapter.setEditMode(false)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
-
         // hide back button
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
@@ -188,7 +184,6 @@ class ListingActivity : AppCompatActivity(), Adapter.OnItemClickListener {
             intent.putExtra("filename", audioRecord.filename)
             startActivity(intent)
         }
-
     }
 
     override fun onItemLongClick(position: Int) {
@@ -207,8 +202,5 @@ class ListingActivity : AppCompatActivity(), Adapter.OnItemClickListener {
         supportActionBar?.setDisplayShowHomeEnabled(false)
         // show relative layout
         editorBar.visibility = View.VISIBLE
-
-
     }
-
 }

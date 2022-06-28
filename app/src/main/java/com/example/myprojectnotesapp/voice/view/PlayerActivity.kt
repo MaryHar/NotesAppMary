@@ -12,9 +12,7 @@ import android.widget.SeekBar
 import androidx.core.content.res.ResourcesCompat
 import com.example.myprojectnotesapp.R
 import com.example.myprojectnotesapp.home.activity.EditActivity
-import kotlinx.android.synthetic.main.activity_listing.*
 import kotlinx.android.synthetic.main.activity_player.*
-import kotlinx.android.synthetic.main.activity_player.toolbar
 import kotlinx.android.synthetic.main.toolbar_voice_home.*
 
 
