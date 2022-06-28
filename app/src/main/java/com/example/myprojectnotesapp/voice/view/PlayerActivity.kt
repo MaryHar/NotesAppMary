@@ -1,5 +1,6 @@
 package com.example.myprojectnotesapp.voice.view
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.media.PlaybackParams
 import androidx.appcompat.app.AppCompatActivity
@@ -10,9 +11,11 @@ import android.util.Log
 import android.widget.SeekBar
 import androidx.core.content.res.ResourcesCompat
 import com.example.myprojectnotesapp.R
+import com.example.myprojectnotesapp.home.activity.EditActivity
 import kotlinx.android.synthetic.main.activity_listing.*
 import kotlinx.android.synthetic.main.activity_player.*
 import kotlinx.android.synthetic.main.activity_player.toolbar
+import kotlinx.android.synthetic.main.toolbar_voice_home.*
 
 
 class PlayerActivity : AppCompatActivity() {
@@ -27,17 +30,8 @@ class PlayerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_player)
 
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
-        toolbar.setNavigationOnClickListener {
-            onBackPressed()
-        }
 
         var filePath = intent.getStringExtra("filepath")
-        var filename = intent.getStringExtra("filename")
-
-        tvFilename.text = filename
 
         mediaPlayer = MediaPlayer()
         mediaPlayer.apply {
@@ -56,7 +50,13 @@ class PlayerActivity : AppCompatActivity() {
         btnPlay.setOnClickListener {
             playPausePlayer()
         }
-
+        nib_edit.setOnClickListener{
+            val intent = Intent(this, EditActivity::class.java)
+            startActivity(intent)
+        }
+        nib_back.setOnClickListener {
+            onBackPressed()
+        }
         btnForward.setOnClickListener {
             mediaPlayer.seekTo(mediaPlayer.currentPosition + 1000)
             seekBar.progress += 1000

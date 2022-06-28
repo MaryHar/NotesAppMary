@@ -92,7 +92,7 @@ class SearchActivity : AppCompatActivity(), SearchView.OnQueryTextListener, View
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
-        Toast.makeText(this, "There is post with that title", Toast.LENGTH_SHORT).show()
+       dismissKeyboardShortcutsHelper()
         return true
     }
 

@@ -5,22 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".voice.view.PlayerActivity">
-
-    <com.google.android.material.appbar.MaterialToolbar
+    <include
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title=" ">
-        <TextView
-            android:id="@+id/tvFilename"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:layout_marginEnd="46dp"
-            android:text=""/>
-    </com.google.android.material.appbar.MaterialToolbar>
+        layout="@layout/toolbar_voice_home" />
+
 
     <com.example.myvoice.PlayerWaveformView
         android:id="@+id/playerView"
@@ -28,8 +16,9 @@
         android:layout_height="640px"
         app:layout_constraintBottom_toTopOf="@+id/seekBar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip"
