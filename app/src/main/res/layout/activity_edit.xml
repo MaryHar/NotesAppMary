@@ -77,7 +77,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="8dp"
-
             android:background="@null"
             android:gravity="top|start"
             android:hint="@string/write_a_note"
@@ -86,6 +85,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+
+
 
     </androidx.cardview.widget.CardView>
 
@@ -99,4 +101,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/ncv_note"
         app:layout_constraintStart_toStartOf="@+id/ncv_note"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

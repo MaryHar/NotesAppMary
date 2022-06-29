@@ -1,7 +1,11 @@
 package com.example.myprojectnotesapp.home.activity
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.speech.RecognizerIntent
+import android.speech.tts.TextToSpeech
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
@@ -14,8 +18,22 @@ import com.example.myprojectnotesapp.entity.Note
 import com.example.myprojectnotesapp.method.DateChange
 import com.example.myprojectnotesapp.viewModel.NotesViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import kotlinx.android.synthetic.main.activity_detail_note.*
+import kotlinx.android.synthetic.main.activity_edit.*
+import kotlinx.android.synthetic.main.toolbar_detail.*
+import java.util.*
 
 class DetailNoteActivity : AppCompatActivity(), View.OnClickListener {
+
+
+    private val textToSpeechEngine: TextToSpeech by lazy {
+        TextToSpeech(this,
+            TextToSpeech.OnInitListener { status ->
+                if (status == TextToSpeech.SUCCESS) {
+                    textToSpeechEngine.language = Locale.ENGLISH
+                }
+            })
+    }
     private lateinit var binding: ActivityDetailNoteBinding
     val editNoteExtra = "edit_note_extra"
     private lateinit var note: Note
@@ -32,8 +50,29 @@ class DetailNoteActivity : AppCompatActivity(), View.OnClickListener {
         initViewModel()
         initListener()
 
+        btn_tts.setOnClickListener {
+            val text = tv_body.text.toString().trim()
+            if (text.isNotEmpty()) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    textToSpeechEngine.speak(text, TextToSpeech.QUEUE_FLUSH, null, "tts1")
+                } else {
+                    textToSpeechEngine.speak(text, TextToSpeech.QUEUE_FLUSH, null)
+                }
+            } else {
+                Toast.makeText(this, "Text cannot be empty", Toast.LENGTH_LONG).show()
+            }
+        }
+
+    }
+    override fun onPause() {
+        textToSpeechEngine.stop()
+        super.onPause()
     }
 
+    override fun onDestroy() {
+        textToSpeechEngine.shutdown()
+        super.onDestroy()
+    }
     private fun initView() {
 
         if (intent.getParcelableExtra<Note>(editNoteExtra) != null) {
