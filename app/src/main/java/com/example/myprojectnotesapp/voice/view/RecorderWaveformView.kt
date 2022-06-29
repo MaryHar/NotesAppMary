@@ -79,7 +79,6 @@ class RecorderWaveformView: View {
         }
         invalidate()
     }
-
     override fun onDraw(canvas: Canvas?) {
         spikes.forEach {
             canvas?.drawRoundRect(it, 6f, 6f,paintRead)

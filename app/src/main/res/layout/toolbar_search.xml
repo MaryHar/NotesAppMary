@@ -35,7 +35,7 @@
             app:cardMaxElevation="0dp"
             app:cardPreventCornerOverlap="false">
 
-            <SearchView
+            <androidx.appcompat.widget.SearchView
                 android:id="@+id/search_notes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

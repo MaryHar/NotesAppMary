@@ -31,6 +31,7 @@
             android:id="@+id/filenameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
             android:layout_margin="16dp"
             android:padding="16dp"
             android:width="4dp"
