@@ -88,5 +88,37 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:background="@color/white"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:focusable="true">
 
+        <ImageView
+            android:id="@+id/iv_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:src="@drawable/ic_baseline_supervisor_account_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/colorTitle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="About us"
+            android:textColor="@color/colorTitle"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_about"
+            app:layout_constraintStart_toEndOf="@+id/iv_about"
+            app:layout_constraintTop_toTopOf="@+id/iv_about" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

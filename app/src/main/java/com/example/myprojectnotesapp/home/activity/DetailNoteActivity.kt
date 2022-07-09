@@ -30,7 +30,8 @@ class DetailNoteActivity : AppCompatActivity(), View.OnClickListener {
         TextToSpeech(this,
             TextToSpeech.OnInitListener { status ->
                 if (status == TextToSpeech.SUCCESS) {
-                    textToSpeechEngine.language = Locale.ENGLISH
+                   textToSpeechEngine.language = Locale.ENGLISH
+                // textToSpeechEngine.language = Locale("in_ID")
                 }
             })
     }

@@ -1,6 +1,7 @@
 package com.example.myprojectnotesapp.ui.login.Intro
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -12,6 +13,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
 import com.example.myprojectnotesapp.R
 import com.example.myprojectnotesapp.databinding.FragmentIntroBinding
+import com.example.myprojectnotesapp.home.activity.HomeActivity
+import com.google.firebase.auth.FirebaseAuth
 
 
 class IntroFragment : Fragment() {
@@ -21,8 +24,11 @@ class IntroFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        if (FirebaseAuth.getInstance().currentUser !=null){
+            startActivity(Intent(activity, HomeActivity::class.java))
+            getActivity()?.finish()
+        }
         binding = FragmentIntroBinding.inflate(layoutInflater)
-
         return binding.root
     }
 
@@ -78,9 +84,9 @@ class IntroFragment : Fragment() {
         )
         introList.add(
             IntroSlide(
-                R.drawable.splash_screen,
+                R.drawable.splash_screen1,
                 getString(R.string.body),
-                getString(R.string.notes)
+                getString(R.string.audio_notes)
             )
         )
         introList.add(

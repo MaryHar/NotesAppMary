@@ -21,6 +21,7 @@ class HomeActivity : AppCompatActivity() , View.OnClickListener {
     private lateinit var binding: ActivityHomeBinding
     private lateinit var dialog: BottomSheetDialog
     private lateinit var changeDialog: View
+    private lateinit var aboutDialog: View
     private lateinit var editTextPassword: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,6 +67,7 @@ class HomeActivity : AppCompatActivity() , View.OnClickListener {
         dialog.show()
 
         bindingBottom.clChangePassword.setOnClickListener(this)
+        bindingBottom.clAbout.setOnClickListener(this)
         bindingBottom.clSignOut.setOnClickListener(this)
 
     }
@@ -93,7 +95,23 @@ class HomeActivity : AppCompatActivity() , View.OnClickListener {
             R.id.floatingActionButton -> {
                 startActivity(Intent(this, EditActivity::class.java))
             }
+            R.id.cl_about -> {
+                aboutDialog =
+                    LayoutInflater
+                        .from(this)
+                        .inflate(R.layout.about_us_dialog, null)
 
+                val mBuilder1 = AlertDialog.Builder(this)
+                    .setView(aboutDialog)
+                    .setTitle("About us")
+                val mAlertDialog1 = mBuilder1.show()
+
+                aboutDialog.findViewById<Button>(R.id.buttonCancel).setOnClickListener {
+                    mAlertDialog1.dismiss()
+
+                }
+
+            }
             R.id.cl_changePassword -> {
                 changeDialog =
                     LayoutInflater
@@ -141,7 +159,7 @@ class HomeActivity : AppCompatActivity() , View.OnClickListener {
                             }
                 }
 
-                    }
+            }
 
                 }
             }

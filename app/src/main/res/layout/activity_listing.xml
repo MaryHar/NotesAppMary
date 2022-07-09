@@ -37,11 +37,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="gone">
+
                     <ImageButton
                         android:id="@+id/btnClose"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/ic_close"/>
+                        android:background="@drawable/ic_close" />
 
                     <ImageButton
                         android:id="@+id/btnSelectAll"
@@ -50,6 +51,8 @@
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="16dp"
                         android:background="@drawable/ic_list" />
+
+
                 </RelativeLayout>
 
             </com.google.android.material.appbar.MaterialToolbar>
@@ -81,33 +84,38 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </androidx.core.widget.NestedScrollView>
+
     <LinearLayout
         android:id="@+id/bottomSheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:background="@color/pinkSecondaryDark"
         android:gravity="center"
+        android:padding="16dp"
         app:behavior_hideable="true"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-        android:background="@color/pinkSecondaryDark">
+        app:layout_anchor="@+id/bottomSheet"
+        app:layout_anchorGravity="bottom|center"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="90dp"
             android:gravity="center"
             android:orientation="vertical">
+
             <ImageButton
                 android:id="@+id/btnRename"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
-                android:background="@drawable/ic_edit_disabled"/>
+                android:background="@drawable/ic_edit_disabled"
+                android:clickable="false" />
             <TextView
                 android:id="@+id/tvRename"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorDisabled"
-                android:text="Rename"/>
+                android:text="Rename"
+                android:textColor="@color/colorDisabled" />
         </LinearLayout>
 
         <LinearLayout
@@ -117,16 +125,18 @@
             android:orientation="vertical">
             <ImageButton
                 android:id="@+id/btnDelete"
-                android:clickable="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ic_delete_disabled2"/>
+                android:layout_toStartOf="@+id/btnSelectAll"
+                android:layout_toEndOf="@+id/btnClose"
+                android:background="@drawable/ic_delete_disabled2"
+                android:clickable="false" />
             <TextView
                 android:id="@+id/tvDelete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorDisabled"
-                android:text="Delete"/>
+                android:text="Delete"
+                android:textColor="@color/colorDisabled" />
         </LinearLayout>
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
