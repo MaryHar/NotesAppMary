@@ -147,11 +147,11 @@ class ListingActivity : AppCompatActivity(), Adapter.OnItemClickListener {
             1 -> {
                 btnRename.isClickable = true
                 btnRename.background = ResourcesCompat.getDrawable(resources, R.drawable.ic_edit, theme)
-                tvRename.setTextColor(resources.getColor(R.color.colorText, theme))
+                tvRename.setTextColor(resources.getColor(R.color.colorBackground, theme))
 
                 btnDelete.isClickable = true
                 btnDelete.background = ResourcesCompat.getDrawable(resources, R.drawable.ic_delete, theme)
-                tvDelete.setTextColor(resources.getColor(R.color.colorText, theme))
+                tvDelete.setTextColor(resources.getColor(R.color.colorBackground, theme))
 
             }
             else -> {
@@ -161,7 +161,7 @@ class ListingActivity : AppCompatActivity(), Adapter.OnItemClickListener {
 
                 btnDelete.isClickable = true
                 btnDelete.background = ResourcesCompat.getDrawable(resources, R.drawable.ic_delete, theme)
-                tvDelete.setTextColor(resources.getColor(R.color.colorText, theme))
+                tvDelete.setTextColor(resources.getColor(R.color.colorBackground, theme))
 
             }
         }

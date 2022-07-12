@@ -174,7 +174,7 @@ class MainVoiceActivity : AppCompatActivity(), BottomSheet.OnClickListener, Time
         recorder?.apply {
             resume()
         }
-        recordBtn.setImageResource(R.drawable.ic_pause)
+        recordBtn.setImageResource(R.drawable.bottomsheet_bg)
         animatePlayerView()
         timer.start()
     }

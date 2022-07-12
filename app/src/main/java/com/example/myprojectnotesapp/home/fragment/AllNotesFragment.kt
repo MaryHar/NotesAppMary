@@ -37,7 +37,6 @@ class AllNotesFragment : Fragment() {
         initView()
         initViewModel()
         initListener()
-
     }
 
     private fun initView() {
